@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="de">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Support Compass · Portfolio</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
+<body>
+<header><a class="brand" href="/">S<span class="brand-dot">●</span>C <span>Support Compass</span></a><span class="tag">Portfolio · Fiktive Beispieldaten</span></header>
+<main>
+<section class="intro"><div class="eyebrow">KI IM ARBEITSALLTAG</div><h1>Wissen finden.<br>Antworten prüfen.</h1><p>Ein Supportassistent mit nachvollziehbaren Quellen, optionalem lokalem Sprachmodell und dokumentierter Qualitätsprüfung.</p></section>
+<nav class="tabs" aria-label="Projekt auswählen"><button class="tab active" id="tab-assistant" aria-selected="true" aria-controls="assistant">01 · Wissensassistent</button><button class="tab" id="tab-evaluation" aria-selected="false" aria-controls="evaluation">02 · Qualitätsprüfung</button></nav>
+<section id="assistant" class="panel">
+<div class="section-head"><div><h2>Support, mit Quellen.</h2><p>Stelle eine Frage zu den fiktiven internen IT-Anleitungen.</p></div><span class="tag green">12 Wissensdokumente</span></div>
+<div class="assistant-grid"><div>
+<form id="question-form"><label for="question">Deine Frage</label><textarea id="question" maxlength="2000" required placeholder="Wie richte ich meinen VPN-Zugang ein?"></textarea><div class="form-footer"><label class="check"><input type="checkbox" id="use-model"> Lokales Sprachmodell verwenden</label><button class="primary" id="ask" type="submit">Antwort finden ↗</button></div></form>
+<p class="hint">Standard: wörtliche Quellen-Auszüge. Das optionale Sprachmodell benötigt Ollama und ein eingerichtetes Modell.</p>
+<div class="examples"><span>Zum Ausprobieren</span><button data-question="Wie richte ich VPN ein?">VPN einrichten</button><button data-question="Ich habe eine Phishingmail bekommen.">Phishing melden</button><button data-question="Wie hoch ist mein Gehalt?">Unbekannte Frage</button></div>
+<article id="answer-card" class="answer-card" hidden><div class="eyebrow" id="answer-mode"></div><h3>Antwortentwurf</h3><p id="answer-text"></p><p id="answer-warning" class="warning" hidden></p><div id="sources"></div><p class="hint" id="answer-timing"></p><button id="copy-answer" class="secondary">Entwurf kopieren</button><span id="copy-status" role="status"></span></article>
+<p id="assistant-error" class="error" role="alert"></p>
+</div><aside class="card"><div class="eyebrow">WISSENSBASIS</div><h3>Fiktives Unternehmen.<br>Reale Fragestellungen.</h3><p>Die Dokumente dienen als Demo. Sie enthalten keine Richtlinien von AKG, viadee oder einem anderen Arbeitgeber.</p><div id="document-list"></div><div class="notice">Antworten vor Verwendung prüfen. Quellenangaben allein garantieren keine korrekte Modellantwort.</div></aside></div>
+</section>
+<section id="evaluation" class="panel" hidden><div class="section-head"><div><h2>Qualität sichtbar machen.</h2><p>30 dokumentierte Fragen für Quellenabruf und den Umgang mit unbekannten Themen.</p></div><span class="tag">Such-Baseline</span></div><div id="eval-metrics" class="metrics"></div><div class="notice" id="eval-limitations"></div><article class="card variants-card"><div class="table-scroll"><table><thead><tr><th>Frage</th><th>Erwartete Quelle</th><th>Ergebnis</th></tr></thead><tbody id="eval-results"></tbody></table></div></article><p id="eval-error" class="error" role="alert"></p></section>
+</main><footer>Support Compass · Python / Informationssuche / Lokale KI / Evaluation<span>Lokale Portfolio-Demo · Keine Unternehmensdaten</span></footer>
+</body></html>

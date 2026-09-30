@@ -1,0 +1,9 @@
+[project]
+name = "ki-support-assistant"
+version = "1.0.0"
+description = "German-language support knowledge assistant with local LLM integration and reproducible evaluation"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.setuptools.packages.find]
+include = ["portfolio*"]
